@@ -72,9 +72,10 @@ public class ExampleListActivity extends SherlockPreferenceActivity {
 			cls = ArticleListActivity.class;
 			id = 6;
 		} else if (title.equals(getString(R.string.update))) {
-			Uri uriUrl = Uri.parse("http://ebooklyonfrance.github.io/version.html");
-			Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl); 
-			startActivity(launchBrowser);
+//			Uri uriUrl = Uri.parse("http://ebooklyonfrance.github.io/version.html");
+//			Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl); 
+//			startActivity(launchBrowser);
+			Toast.makeText(this, "当前应用已是最新版本。", Toast.LENGTH_SHORT).show();
 			return true;
 		} else if (title.equals(getString(R.string.delfavorite))) {
 			id = 7;
@@ -85,7 +86,7 @@ public class ExampleListActivity extends SherlockPreferenceActivity {
 			dialogShow(id);
 			return true;
 		} else if (title.equals(getString(R.string.fontAndBg))) {
-			Toast.makeText(this, "自定义字体功能正在拼命开发中！！！", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "自定义字体功能正在拼命开发中！", Toast.LENGTH_SHORT).show();
 			return true;
 		} else if (title.equals(getString(R.string.about))) {
 			new AlertDialog.Builder(this).setTitle(R.string.about)

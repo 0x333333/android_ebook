@@ -102,7 +102,7 @@ class ArticleListAdapter extends BaseAdapter {
 				dbManager.insertHistory(id, url, title, status, type, abstr);
 				dbManager.closeDatabase();
 				progressDialog = ProgressDialog.show(mContext,
-						"正在下载", "稍等片刻，精彩马上就来！");
+						"正在下载", "稍等片刻，正在加载文章。");
 				new Thread(runnable).start();
 			}
         });

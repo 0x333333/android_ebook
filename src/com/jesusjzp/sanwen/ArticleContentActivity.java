@@ -1,17 +1,8 @@
 package com.jesusjzp.sanwen;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
-import com.aphidmobile.flip.FlipViewController;
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 import com.jeremyfeinstein.slidingmenu.example.R;
@@ -21,14 +12,11 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class ArticleContentActivity extends BaseActivity {
-
-//	protected FlipViewController flipView;
-//	BufferedReader reader;
-//	CharBuffer buffer = CharBuffer.allocate(8000);
 
 	private DBManager dbManager;
 	private Cursor cursor;
@@ -57,15 +45,15 @@ public class ArticleContentActivity extends BaseActivity {
 		bundle = getIntent().getExtras();
 		id = bundle.getString("id");
 		url = bundle.getString("url");
-		abstr = bundle.getString("abstra");
+		abstr = bundle.getString("abstr");
 		title = bundle.getString("title");
 		status = bundle.getString("status");
 		type = bundle.getString("type");
 		res = bundle.getString("res");
 		
-		String comment = "<br><br>-------------------------<br><br>"
-				+ "如果喜欢这些文章，还希望能向您的朋友推荐本应用。<br><br>"
-				+ "也算是对开发者的一份支持与鼓励！";
+		String comment = "<br><br>------<br><br>"
+				+ "文章摘自http://www.duanwenxue.com"+url+"<br><br>"
+				+ "如果喜欢这些文章，还希望能向您的朋友推荐，谢谢！";
 		
 		if (res.length() > 200)
 			res = res+comment;
@@ -77,6 +65,8 @@ public class ArticleContentActivity extends BaseActivity {
 		setContentView(R.layout.doc_content);
 		
 		doc = (TextView) findViewById(R.id.textView1);
+		res = res.replaceAll("<a(.*?)href=\"(.*?)\"(.*?)>", "").replace("</a>", "");
+		Log.v("res", res);
 		Spanned wordspan = Html.fromHtml(res);
 		doc.setText(wordspan);
 		

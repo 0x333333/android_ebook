@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/mine" >
-        <Preference android:title="@string/shoucangjia" android:icon="@drawable/rating_important" />
+        <Preference android:title="@string/shoucangjia" android:icon="@drawable/ic_favorite" />
         <Preference android:title="@string/lishijilu"  android:icon="@drawable/ic_history"/>
     </PreferenceCategory>
     
