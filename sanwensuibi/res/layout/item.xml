@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.jeremyfeinstein.slidingmenu.example"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<TextView
+	    android:id="@+id/text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="16dp"
+	    android:paddingRight="16dp"
+	    android:paddingTop="8dp"
+	    android:text="item"
+	    android:textSize="17sp"
+	    android:textColor="#333"
+	    android:singleLine="true"
+	/>
+	<TextView
+	    android:id="@+id/abstr"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	  	android:layout_below="@+id/text"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="16dp"
+	    android:paddingRight="16dp"
+	    android:paddingBottom="8dp"
+	    android:text="item"
+	    android:textSize="14sp"
+	    android:textColor="#888"
+	    android:singleLine="true"
+	/>
+
+	<ImageView
+	    android:id="@+id/imageView1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_centerVertical="true"
+	    android:src="@drawable/ic_pointer" />
+	
+</RelativeLayout>
